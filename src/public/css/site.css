@@ -76,12 +76,12 @@ div.superhero {
   vertical-align: top;
 }
 
-div.superhero:hover p.name {
+div.superhero:hover p.superPower {
   background: #607588;
   color: white;
 }
 
-p.name {
+p.superPower {
   text-align: center;
   font-size: 20px;
   font-weight: bolder;
