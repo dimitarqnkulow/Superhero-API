@@ -15,4 +15,8 @@ router.post("/create", (req, res) => {
   });
   res.redirect("/");
 });
+router.get("/details/:superheroId", (req, res) => {
+  const superhero = superheroManager.getOne(req.params.superheroId);
+  res.render("details", { ...superhero });
+});
 module.exports = router;

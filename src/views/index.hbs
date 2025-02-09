@@ -17,29 +17,7 @@
     />
     <input type="submit" value="search" />
   </form>
-  <div class="superhero">
-    <img class="superhero" src="/images/GWR-Superheroes-BATMAN.svg" />
-    <p class="superPower">Superhero 1</p>
-    <p><span>Humility level:</span> 3</p>
-    <a class="btn" href="">Details</a>
-  </div>
-  <div class="superhero">
-    <img class="superhero" src="/images/GWR-Superheroes-CAPTAIN-AMERICA.svg" />
-    <p class="superPower">Superhero 2</p>
-    <p><span>Humility level:</span> 6</p>
-    <a class="btn" href="">Details</a>
-  </div>
-  <div class="superhero">
-    <img class="superhero" src="/images/GWR-Superheroes-CAPTAIN-MARVEL.svg" />
-    <p class="superPower">Superhero 3</p>
-    <p><span>Humility level:</span> 1</p>
-    <a class="btn" href="">Details</a>
-  </div>
-  <div class="superhero">
-    <img class="superhero" src="/images/GWR-Superheroes-SUPERMAN.svg" />
-    <p class="superPower">Superhero 4</p>
-    <p><span>Humility level:</span> 3</p>
-    <a class="btn" href="">Details</a>
-  </div>
-
+  {{#each superheros}}
+    {{>superheroCard}}
+  {{/each}}
 </main>
