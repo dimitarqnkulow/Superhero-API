@@ -1,10 +1,13 @@
 const express = require("express");
+
 const handlebars = require("express-handlebars");
 
 const app = express();
 
 const PORT = 3000;
 
+//Express config
+app.use(express.static("public"));
 app.engine(
   "hbs",
   handlebars.engine({
@@ -14,7 +17,6 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", "src/views");
 app.get("/", (req, res) => {
-  res.send("Hello from express");
+  res.render("index");
 });
-
-app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on ${PORT}...`));
