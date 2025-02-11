@@ -11,8 +11,9 @@ router.post("/create", (req, res) => {
     name,
     superPower,
     imageUrl,
-    humilityScore: Number(humilityScore),
+    humilityScore: humilityScore,
   });
+  res.sendStatus(200);
   res.redirect("/");
 });
 router.get("/details/:superheroId", (req, res) => {
