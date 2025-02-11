@@ -32,9 +32,29 @@ const superheroes = [
 exports.getAll = () => superheroes.slice();
 exports.getOne = (superheroId) => superheroes.find((x) => x.id == superheroId);
 exports.create = (superheroData) => {
+  const { name, superPower, imageUrl, humilityScore } = superheroData;
+  if (!name || !superPower || !imageUrl || !humilityScore) {
+    throw new Error(
+      `Request body must include ${!name ? "name" : ""}, ${
+        !superPower ? "superPower" : ""
+      }, ${!imageUrl ? "imageUrl" : ""}, ${
+        !humilityScore ? "humilityScore" : ""
+      }!`
+    );
+  }
+  if (
+    typeof humilityScore !== "number" ||
+    humilityScore < 1 ||
+    humilityScore > 10
+  ) {
+    throw new Error("Humility score must be a number between 1 and 10!");
+  }
   const newSuperhero = {
     id: uniqid(),
-    ...superheroData,
+    name,
+    superPower,
+    imageUrl,
+    humilityScore,
   };
   superheroes.push(newSuperhero);
 
