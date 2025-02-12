@@ -16,17 +16,15 @@ router.post("/create", (req, res) => {
       name: superheroData.name,
       superPower: superheroData.superPower,
       imageUrl: superheroData.imageUrl,
-      humilityScore: Number(superheroData.humilityScore),
+      humilityScore: Number(superheroData.humilityScore)
+        ? Number(superheroData.humilityScore)
+        : superheroData.humilityScore,
     });
     res.redirect("/");
-    res.sendStatus(200);
-    return res.json(superheroData);
+    res.status(302);
   } catch (error) {
-    console.log(error);
-
     res.render("create", { error: error.message });
-    // res.sendStatus(400);
-    // res.json({ error: error.message });
+    res.status(400);
   }
 });
 module.exports = router;
