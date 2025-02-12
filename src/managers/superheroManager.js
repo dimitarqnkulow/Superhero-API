@@ -35,9 +35,9 @@ exports.create = (superheroData) => {
   const { name, superPower, imageUrl, humilityScore } = superheroData;
   if (!name || !superPower || !imageUrl || !humilityScore) {
     throw new Error(
-      `Request body must include ${!name ? "name" : ""}, ${
-        !superPower ? "superPower" : ""
-      }, ${!imageUrl ? "imageUrl" : ""}, ${
+      `Request body must include ${!name ? "name, " : ""}${
+        !superPower ? "superPower, " : ""
+      }${!imageUrl ? "imageUrl, " : ""}${
         !humilityScore ? "humilityScore" : ""
       }!`
     );
