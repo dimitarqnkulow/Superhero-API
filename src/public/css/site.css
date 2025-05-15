@@ -246,3 +246,14 @@ footer {
     opacity: 0;
   }
 }
+#notifications {
+  width: 100%;
+  padding: 5px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  background: rgb(231, 118, 118);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
